@@ -1,0 +1,1 @@
+export const SEARCH_TAGS = ["Rating 4.0+", "Pure Veg","Less than Rs. 300", "Rs. 300- Rs. 600"];

@@ -15,8 +15,15 @@ Currently, two official plugins are available:
             - Title
             - Date
             - Search
-        - Search Tags
-        - Cards(Dynamic)
+        - Body
+            - Search Tags
+            - Cards(Dynamic)
         - Footer
     - Cart
     - Success
+
+
+# Thins to add
+    - 4.0+ button to filter cards
+    - search function with text includes in name (take care of case sensitivity issue)
+    - 

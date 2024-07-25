@@ -1,0 +1,1 @@
+export const API_LINK = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3131722&lng=76.38462179999999";

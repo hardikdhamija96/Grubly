@@ -1,32 +1,17 @@
+import Header from "./components/layout/header/Header";
+import Body from "./components/Body";
+import { Outlet } from "react-router-dom";
+import Footer from "./components/layout/footer/Footer";
 
-/**
- * Header
- *  - Logo
- *  - Nav Items
- * Body
- *  - Search
- *  - Restaurant Container 
- *    - Restaurant Card
- *    - 
- * Footer
- *  - Copyright
- *  - Links
- *  - Address
- *  - Contact
- */
-
-import './App.css'
 
 function App() {
-
-
   return (
-    <>
-       <h1 className="text-3xl font-bold underline text-secondaryv1">
-      Hello world!
-    </h1>
-    </>
-  )
+    <div className="bg-white h-full w-full">
+      <Header />
+      <Outlet />
+      <Footer/>
+    </div>
+  );
 }
 
-export default App
+export default App;
