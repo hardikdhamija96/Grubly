@@ -8,7 +8,7 @@ const RestaurantCards = ({ name, locality, costForTwo, avgRating, imgURL }) => {
   let img_src = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${imgURL}`;
 
   return (
-    <div className="max-w-96 w-60 md:w-72  md:h-[500px]">
+    <div className="max-w-96 w-64 md:w-72 h-[500px]">
       <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-red-950 dark:border-gray-700 h-full">
         
           <img className="m-auto py-8 px-4 md:px-6 rounded-t-lg md:w-[300px] md:h-[300px] h-[320px] object-cover object-center" src={img_src} alt={name} />

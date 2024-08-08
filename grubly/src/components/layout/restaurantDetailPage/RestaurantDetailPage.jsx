@@ -14,7 +14,7 @@ const RestaurantDetailPage = () => {
 
   const fetchAPI = async () => {
     const data = await fetch(
-      `https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=30.3131722&lng=76.38462179999999&restaurantId=${resId}`
+      `https://swiggyfoodserver.onrender.com/api/restaurants/restaurantDetail?lat=30.3131722&lng=76.38462179999999&resId=${resId}`
     );
     const jsonData = await data.json();
     const res = jsonData?.data?.cards[2]?.card?.card;
@@ -31,8 +31,8 @@ const RestaurantDetailPage = () => {
 
   return (
     <div className="max-w-[40rem] m-auto my-20">
-      <h1 className="py-4 text-2xl font-bold">{resDetails.info.name}</h1>
-      <div className="border-2 shadow-lg pt-6 pb-3 rounded-2xl">
+      <h1 className="py-4 sm:text-2xl font-bold text-lg text-center sm:text-left">{resDetails.info.name}</h1>
+      <div className="border-2 shadow-lg pt-6 pb-3 rounded-2xl mx-2 sm:mx-1">
         <div className="pl-6">
           <div className="flex gap-2 font-bold text-md">
             <span className="flex justify-start items-center gap-2">
@@ -54,9 +54,9 @@ const RestaurantDetailPage = () => {
           </div>
         </div>
         <hr />
-        <div className="pt-3 pl-2 flex gap-4" >
-          <Icon  className="text-3xl text-gray-500" icon="pepicons-pencil:motorcycle" />
-          <h1 className="text-gray-500 font-normal">
+        <div className="pt-3 pl-2 flex gap-4 items-center" >
+          <Icon  className="text-3xl text-gray-500 " icon="pepicons-pencil:motorcycle" />
+          <h1 className="text-gray-500 font-normal text-sm sm:text-base">
           Order above 149 for discounted delivery fee
           </h1>
         </div>

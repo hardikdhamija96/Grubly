@@ -26,9 +26,9 @@ const Search = ({ listOfRestaurants, setFilteredRestaurantList }) => {
           onChange={(e) => {
             setKeyword(e.target.value);
           }}
-          className="mr-4 p-2 rounded-lg border-2 w-[40%]"
+          className="mr-4 p-2 rounded-lg border-2 w-[40%] text-[0.65rem] sm:text-lg"
         />
-        <button className="border-2 shadow-md px-2 py-1 rounded-md text-black hover:bg-slate-200 duration-100 ease-in-out active:scale-105 active:shadow-lg">
+        <button className="border-2 shadow-md sm:px-2 sm:py-1 rounded-md text-black hover:bg-slate-200 duration-100 ease-in-out active:scale-105 active:shadow-lg text-[0.65rem] sm:text-lg px-3">
           {" "}
           Search
         </button>

@@ -17,7 +17,7 @@ const RestaurantContainer = () => {
 
   const fetchAPI = async () => {
     const data = await fetch(
-      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3131722&lng=76.38462179999999"
+      "https://swiggyfoodserver.onrender.com/api/restaurants?lat=30.3131722&lng=76.38462179999999"
     );
 
     const jsonData = await data.json();
@@ -27,7 +27,7 @@ const RestaurantContainer = () => {
     setListOfRestaurants(resList);
     setFilteredRestaurantList(resList);
 
-    console.log(resList)
+    // console.log(resList)
   };
 
   const allRestaurants = () => {
@@ -69,7 +69,7 @@ const RestaurantContainer = () => {
 
   return (
     <div>
-      <h1 className="text-[1.5rem] font-bold pl-[3.05rem] pt-10">
+      <h1 className="text-base sm:text-[1.5rem] font-bold pl-[3.05rem] pt-10">
         Restaurants with online food delivery in Patiala
       </h1>
       <FilterTagContainer
@@ -88,7 +88,7 @@ const RestaurantContainer = () => {
         {listOfRestaurants.length === 0 ? (
           <RestaurantContainerShimmer />
         ) : (
-          <div className="flex flex-wrap justify-start md:gap-4 p-8 w-full ml-11 md:m-0 gap-10">
+          <div className="flex flex-wrap justify-start md:gap-4 p-8 ml-11 md:m-0 gap-6">
             {filteredRestaurantList.map((obj) => (
               <Link to={"/restaurants/"+ obj?.info?.id} key={obj?.info?.id}>
                 <RestaurantCards

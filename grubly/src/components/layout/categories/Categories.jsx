@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import CategoriesShimmer from "../../shimmer/CategoriesShimmer";
 
 const Categories = () => {
   const [categoriesData, setCategoriesData] = useState([]);
@@ -12,7 +13,7 @@ const Categories = () => {
 
   const fetchAPI = async () => {
     const data = await fetch(
-      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3131722&lng=76.38462179999999"
+      "https://swiggyfoodserver.onrender.com/api/restaurants?lat=30.3131722&lng=76.38462179999999"
     );
     const jsonData = await data.json();
     const categories =
@@ -20,6 +21,13 @@ const Categories = () => {
 
     setCategoriesData(categories);
   };
+
+  if(categoriesData.length===0)
+  {
+    return(
+      <CategoriesShimmer/>
+    )
+  }
 
   const settings = {
     dots: true,
@@ -32,7 +40,7 @@ const Categories = () => {
 
   return (
     <div className="bg-white w-full m-auto px-10 py-14 border-b-8 ">
-      <h1 className="text-[1.4rem] font-bold">What's on yor Mind?</h1>
+      <h1 className="text-base pb-4 sm:pb-0 sm:text-[1.4rem] font-bold">What's on your Mind?</h1>
       <div >
         <Slider {...settings}>
           {categoriesData.map((item) => (
