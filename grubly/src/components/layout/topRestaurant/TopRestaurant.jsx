@@ -16,13 +16,14 @@ const TopRestaurant = () => {
       "https://swiggyfoodserver.onrender.com/api/restaurants?lat=30.3131722&lng=76.38462179999999"
     );
     const jsonData = await data.json();
+
     const topRestaurant =
       jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
+        ?.restaurants || [];
     setTopRestaurantsData(topRestaurant);
   };
 
-  if(topRestaurantsData.length === 0){
+  if(topRestaurantsData.length === 0 || topRestaurantsData === undefined){
     return(
       <TopRestaurantsShimmer />
     )

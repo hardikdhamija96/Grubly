@@ -23,7 +23,7 @@ const RestaurantContainer = () => {
     const jsonData = await data.json();
     const resList =
       jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
+        ?.restaurants || [];
     setListOfRestaurants(resList);
     setFilteredRestaurantList(resList);
 
@@ -85,7 +85,7 @@ const RestaurantContainer = () => {
       listOfRestaurants = {listOfRestaurants}
       />
       <div className="">
-        {listOfRestaurants.length === 0 ? (
+        {listOfRestaurants.length === 0 || listOfRestaurants === undefined ? (
           <RestaurantContainerShimmer />
         ) : (
           <div className="flex flex-wrap justify-start md:gap-4 p-8 ml-11 md:m-0 gap-6">

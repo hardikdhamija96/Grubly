@@ -17,12 +17,12 @@ const Categories = () => {
     );
     const jsonData = await data.json();
     const categories =
-      jsonData?.data?.cards[0]?.card?.card?.imageGridCards?.info;
+      jsonData?.data?.cards[0]?.card?.card?.imageGridCards?.info || [];
 
     setCategoriesData(categories);
   };
 
-  if(categoriesData.length===0)
+  if(categoriesData.length===0 || categoriesData === undefined)
   {
     return(
       <CategoriesShimmer/>
